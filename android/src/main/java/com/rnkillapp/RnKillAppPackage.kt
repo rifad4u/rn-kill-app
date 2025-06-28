@@ -8,8 +8,9 @@ import com.facebook.react.module.model.ReactModuleInfoProvider
 import java.util.HashMap
 
 class RnKillAppPackage : BaseReactPackage() {
+
     override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
-        return if (name == RnKillAppModule.NAME) {
+        return if (name == RnKillAppImpl.NAME) {
             RnKillAppModule(reactContext)
         } else {
             null
@@ -19,15 +20,21 @@ class RnKillAppPackage : BaseReactPackage() {
     override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
         return ReactModuleInfoProvider {
             val moduleInfos: MutableMap<String, ReactModuleInfo> = HashMap()
-            moduleInfos[RnKillAppModule.NAME] = ReactModuleInfo(
-                RnKillAppModule.NAME,
-                RnKillAppModule.NAME,
-                false,  // canOverrideExistingModule
-                false,  // needsEagerInit
-                false,  // isCxxModule
-                true // isTurboModule
+            val isTurboModule = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
+
+            val moduleInfo = ReactModuleInfo(
+                RnKillAppImpl.NAME,
+                RnKillAppImpl.NAME,
+                false, // canOverrideExistingModule
+                false, // needsEagerInit
+                true, // hasConstants
+                false, // isCxxModule
+                isTurboModule // isTurboModule
             )
+
+            moduleInfos[RnKillAppImpl.NAME] = moduleInfo
             moduleInfos
         }
     }
+
 }

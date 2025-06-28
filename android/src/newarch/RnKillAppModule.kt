@@ -5,17 +5,14 @@ import com.facebook.react.module.annotations.ReactModule
 
 class RnKillAppModule(reactContext: ReactApplicationContext) : NativeRnKillAppSpec(reactContext) {
 
+    private var delegate: RnKillAppImpl = RnKillAppImpl()
+
     override fun getName(): String {
-        return NAME
+        return RnKillAppImpl.NAME
     }
 
     override fun exitApp() {
-        getReactApplicationContext().currentActivity?.finishAndRemoveTask()
-        System.exit(0)
-    }
-
-    companion object {
-        const val NAME = "RnKillApp"
+        delegate.exitApp(reactApplicationContext)
     }
 
 }
