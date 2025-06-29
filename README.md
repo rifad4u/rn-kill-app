@@ -1,6 +1,6 @@
 # rn-kill-app
 
-React Native Package to kill and exit the application
+React Native Package to kill, exit the application and remove the app from Apps tray in Android
 
 ## Installation
 
@@ -12,11 +12,11 @@ npm install rn-kill-app
 
 
 ```js
-import { multiply } from 'rn-kill-app';
+import { killApp } from "rn-kill-app";
 
 // ...
 
-const result = multiply(3, 7);
+killApp();
 ```
 
 
