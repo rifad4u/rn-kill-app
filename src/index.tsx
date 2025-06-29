@@ -1,3 +1,8 @@
-import RnKillApp from "./NativeRnKillApp";
+import NativeRnKillApp from "./NativeRnKillApp";
 
-export default RnKillApp;
+const killApp = () => {
+    NativeRnKillApp.exitApp();
+};
+
+export { killApp };
+export default NativeRnKillApp;
