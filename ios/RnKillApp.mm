@@ -6,11 +6,14 @@
 
 @implementation RnKillApp
 
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE();
 
-- (void)exitApp {
-  exit(0);
-}
+RCT_EXPORT_METHOD(exitApp)
+{
+    exit(0);
+};
+
+# pragma mark - New Architecture
 
 #if RCT_NEW_ARCH_ENABLED
 
