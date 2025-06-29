@@ -1,7 +1,7 @@
 import NativeRnKillApp from "./NativeRnKillApp";
 
 const killApp = () => {
-    NativeRnKillApp.exitApp();
+    NativeRnKillApp.killApp();
 };
 
 export { killApp };

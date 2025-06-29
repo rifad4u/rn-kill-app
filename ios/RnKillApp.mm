@@ -8,7 +8,7 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(exitApp)
+RCT_EXPORT_METHOD(killApp)
 {
     exit(0);
 };

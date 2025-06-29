@@ -11,8 +11,8 @@ class RnKillAppModule(reactContext: ReactApplicationContext) : NativeRnKillAppSp
         return RnKillAppImpl.NAME
     }
 
-    override fun exitApp() {
-        delegate.exitApp(reactApplicationContext)
+    override fun killApp() {
+        delegate.killApp(reactApplicationContext)
     }
 
 }

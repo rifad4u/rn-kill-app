@@ -15,8 +15,8 @@ class RnKillAppModule(reactContext: ReactApplicationContext) :
     }
 
     @ReactMethod
-    fun exitApp() {
-        delegate.exitApp(reactApplicationContext)
+    fun killApp() {
+        delegate.killApp(reactApplicationContext)
     }
 
 }
